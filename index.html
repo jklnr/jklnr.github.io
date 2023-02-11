@@ -15,9 +15,10 @@
     <script src="https://accounts.google.com/gsi/client" onload="console.log('TODO: add onload function')">  
     </script>
     <script>
+        const code_receiver_uri = 'https://jaylol.com/code_receiver';
         const client = google.accounts.oauth2.initCodeClient({
-        client_id: 'YOUR_GOOGLE_CLIENT_ID',
-        scope: 'https://www.googleapis.com/auth/calendar.readonly',
+        client_id: '117883256410-cj6gkhqi8ih2gs3245jpteo6cb8u8qvl.apps.googleusercontent.com',
+        scope: 'https://www.googleapis.com/auth/userinfo.email',
         ux_mode: 'popup',
         callback: (response) => {
             const xhr = new XMLHttpRequest();
