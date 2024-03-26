@@ -52,7 +52,7 @@ function App() {
     <div className="App">
       {helloMessageResponse ? (
         <>
-          {helloMessageResponse}
+          {JSON.stringify(helloMessageResponse, null, 2)}
           <LogoutButton></LogoutButton>
         </>
       ) : (
