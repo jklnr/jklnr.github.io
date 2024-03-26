@@ -8,7 +8,6 @@ import { useAuth0 } from "@auth0/auth0-react";
 function App() {
   const { user, isLoading, getAccessTokenSilently } = useAuth0();
 
-  // jklnr-api-73ea6b412c87.herokuapp
   const [helloMessageResponse, setHelloMessageResponse] = useState(null);
 
   useEffect(() => {
@@ -22,7 +21,6 @@ function App() {
             scope: "read:current_user",
           },
         });
-        console.log(`Access Token: ${accessToken}`);
 
         const helloMessageUrl = `https://${domain}/api/v1/hello`;
 
@@ -31,7 +29,6 @@ function App() {
             Authorization: `Bearer ${accessToken}`,
           },
         });
-        console.log(`Response data: `, helloMessageResponse);
 
         const helloMessageResponse_ = await helloMessageResponse.json();
 
