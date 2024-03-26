@@ -22,6 +22,7 @@ function App() {
             scope: "read:current_user",
           },
         });
+        console.log(`Access Token: ${accessToken}`);
 
         const helloMessageUrl = `https://${domain}/api/v1/hello`;
 
@@ -30,8 +31,9 @@ function App() {
             Authorization: `Bearer ${accessToken}`,
           },
         });
+        console.log(`Response data: `, helloMessageResponse);
 
-        const { helloMessageResponse_ } = await helloMessageResponse.json();
+        const helloMessageResponse_ = await helloMessageResponse.json();
 
         setHelloMessageResponse(helloMessageResponse_);
       } catch (e) {
